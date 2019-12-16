@@ -7,9 +7,16 @@ const getAll=()=>{
     .from("user")
 }
 
-
+const getById=(id)=>{
+    return db
+    .select("username", "password")
+    .from('user')
+    .where("id", id)
+    .first()
+}
 
 
 module.exports={
-    getAll
+    getAll,
+    getById
 }
